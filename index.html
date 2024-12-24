@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寻宝过程</title>
+    <style>
+        #playerInfo {
+        margin: 10px 0;
+        }
+        #gameHistory div {
+        margin: 10px 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .step {
+            margin: 20px 0;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .visible {
+            opacity: 1;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>寻宝过程</h1>
+    <div id="steps">
+        <div class="step" id="step1">正在获取初始线索...</div>
+        <div class="step" id="step2">正在解码古代文字...</div>
+        <div class="step" id="step3">正在搜索神庙...</div>
+        <div class="step" id="step4">正在解答神庙谜题...</div>
+        <div class="step" id="step5">正在打开宝箱...</div>
+        <div class="step" id="step6">恭喜!你找到了传说中的宝藏!</div>
+    </div>
+    <div id="gameHistory"></div>
+    <div id="playerInfo"></div>
+  
+    <!-- 在<body>中添加 -->
+<div id="playerScores">得分: <span id="score">0</span></div>
+    <div id="playerScores"></div>
+    <!-- 在<body>中添加 -->
+
+    <input type="text" id="nickname" placeholder="输入你的昵称">
+    <button onclick="setPlayerNickname()">设置昵称</button>
+    <div id="gameHistory"></div>
+    <div id="error" class="error"></div>
+    <audio id="backgroundMusic" loop>
+        <source src="backgroundMusic.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素。
+    </audio>
+    <button id="playButton">播放音乐</button>
+    <button id="pauseButton">暂停音乐</button>
+    <script src="treasureHunt.js"></script>
+</body>
+</html>
